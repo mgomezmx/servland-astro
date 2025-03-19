@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://servland.vercel.app/sitemap.xml
+Sitemap: https://ortodens.com/sitemap.xml
