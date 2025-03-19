@@ -80,14 +80,30 @@ import ThemeToggle from '../components/ThemeToggle.astro';
           
           <h2 class="text-3xl font-bold mb-8 text-center text-white font-poppins relative z-10">Nuestros servicios</h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 relative z-10">
-            {[1, 2, 3, 4].map((service) => (
-              <div class="bg-white/10 backdrop-blur-sm p-4 sm:p-6 lg:p-8 rounded-lg shadow-lg hover:shadow-xl transition-all hover:scale-105 hover:bg-white/20 group">
-                <h3 class="text-lg sm:text-xl lg:text-2xl font-semibold mb-4 text-white font-poppins">Service {service}</h3>
-                <p class="text-sm sm:text-base lg:text-lg text-gray-100 group-hover:text-white transition-colors">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-            ))}
+            <div class="bg-white/10 backdrop-blur-sm p-4 sm:p-6 lg:p-8 rounded-lg shadow-lg hover:shadow-xl transition-all hover:scale-105 hover:bg-white/20 group">
+              <h3 class="text-lg sm:text-xl lg:text-2xl font-semibold mb-4 text-white font-poppins">Service 1</h3>
+              <p class="text-sm sm:text-base lg:text-lg text-gray-100 group-hover:text-white transition-colors">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm p-4 sm:p-6 lg:p-8 rounded-lg shadow-lg hover:shadow-xl transition-all hover:scale-105 hover:bg-white/20 group">
+              <h3 class="text-lg sm:text-xl lg:text-2xl font-semibold mb-4 text-white font-poppins">Service 2</h3>
+              <p class="text-sm sm:text-base lg:text-lg text-gray-100 group-hover:text-white transition-colors">
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              </p>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm p-4 sm:p-6 lg:p-8 rounded-lg shadow-lg hover:shadow-xl transition-all hover:scale-105 hover:bg-white/20 group">
+              <h3 class="text-lg sm:text-xl lg:text-2xl font-semibold mb-4 text-white font-poppins">Service 3</h3>
+              <p class="text-sm sm:text-base lg:text-lg text-gray-100 group-hover:text-white transition-colors">
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+              </p>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm p-4 sm:p-6 lg:p-8 rounded-lg shadow-lg hover:shadow-xl transition-all hover:scale-105 hover:bg-white/20 group">
+              <h3 class="text-lg sm:text-xl lg:text-2xl font-semibold mb-4 text-white font-poppins">Service 4</h3>
+              <p class="text-sm sm:text-base lg:text-lg text-gray-100 group-hover:text-white transition-colors">
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -128,7 +144,7 @@ import ThemeToggle from '../components/ThemeToggle.astro';
                   id="email"
                   name="email"
                   required
-                  placeholder="correo"
+                  placeholder="Correo"
                   class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-brand-blue dark:focus:ring-blue-400 focus:border-brand-blue dark:focus:border-blue-400 dark:bg-gray-700 dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
                 />
               </div>
@@ -140,7 +156,7 @@ import ThemeToggle from '../components/ThemeToggle.astro';
                   id="phone"
                   name="tel"
                   required
-                  placeholder="numero de celular a 10 digitos"
+                  placeholder="Número  a 10 digitos"
                   class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-brand-blue dark:focus:ring-blue-400 focus:border-brand-blue dark:focus:border-blue-400 dark:bg-gray-700 dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
                 />
               </div>
