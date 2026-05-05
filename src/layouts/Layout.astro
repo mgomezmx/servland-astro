@@ -7,22 +7,42 @@ interface Props {
   description?: string;
   image?: string;
   canonicalURL?: string;
+  keywords?: string;
 }
 
 const {
   title,
-  description = "Professional business landing page built with Astro and Tailwind CSS. Fast, responsive, and customizable.",
+  description = "Clínica dental especializada en ortodoncia en Guadalajara. Brackets metálicos, estéticos, alineadores transparentes. Agenda tu cita hoy.",
   image = "/preview.png",
   canonicalURL = Astro.url,
+  keywords = "ortodoncia Guadalajara, brackets Guadalajara, dentista Guadalajara, alineadores invisibles, ortodoncia estética, clínica dental Guadalajara, ortodoncista Guadalajara, tratamiento ortodoncia, brackets metálicos, brackets cerámicos"
 } = Astro.props;
 
 // Construct meta data
-const siteTitle = "Servland - Business Landing Page";
+const siteTitle = "Ortodens";
 const fullTitle = title === siteTitle ? title : `${title} | ${siteTitle}`;
+
+// Business information for structured data
+const businessInfo = {
+  name: "Ortodens",
+  type: "Dentist",
+  address: {
+    streetAddress: "Dirección de la clínica", // Update with actual address
+    addressLocality: "Guadalajara",
+    addressRegion: "Jalisco",
+    postalCode: "44950", // Update with actual postal code
+    addressCountry: "MX"
+  },
+  phone: "+523333804784",
+  email: "samara.gomez@ortodens.com",
+  url: Astro.url.origin,
+  priceRange: "$$",
+  openingHours: "Mo-Fr 09:00-18:00, Sa 09:00-14:00" // Update with actual hours
+};
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-MX">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -31,9 +51,15 @@ const fullTitle = title === siteTitle ? title : `${title} | ${siteTitle}`;
     <title>{fullTitle}</title>
     <meta name="title" content={fullTitle} />
     <meta name="description" content={description} />
-    <meta name="author" content="locobean" />
-    <meta name="keywords" content="business, landing page, astro, tailwind css, responsive design, dark mode, professional website" />
-    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="Ortodens" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    
+    <!-- Geo Tags for Local SEO -->
+    <meta name="geo.region" content="MX-JAL" />
+    <meta name="geo.placename" content="Guadalajara" />
+    <meta name="geo.position" content="20.6597;-103.3496" />
+    <meta name="ICBM" content="20.6597, -103.3496" />
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -48,6 +74,10 @@ const fullTitle = title === siteTitle ? title : `${title} | ${siteTitle}`;
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL(image, Astro.url)} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="es_MX" />
+    <meta property="og:site_name" content="Ortodens" />
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
@@ -55,6 +85,28 @@ const fullTitle = title === siteTitle ? title : `${title} | ${siteTitle}`;
     <meta property="twitter:title" content={fullTitle} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={new URL(image, Astro.url)} />
+    
+    <!-- Google Analytics 4 -->
+    <!-- Replace GA_MEASUREMENT_ID with your actual Google Analytics 4 ID -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-1L7PNLJ0H1"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-1L7PNLJ0H1', {
+        page_path: window.location.pathname,
+      });
+    </script>
+    
+    <!-- Google Ads Conversion Tracking -->
+    <!-- Replace AW-CONVERSION_ID with your actual Google Ads conversion ID -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=AW-CONVERSION_ID"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-CONVERSION_ID');
+    </script>
     
     <!-- Optimized Fonts with preload -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -67,6 +119,73 @@ const fullTitle = title === siteTitle ? title : `${title} | ${siteTitle}`;
     
     <meta name="generator" content={Astro.generator} />
     <meta name="theme-color" content="#4F46E5" />
+    
+    <!-- Structured Data (Schema.org) for Local Business -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Dentist",
+      "@id": businessInfo.url,
+      "name": businessInfo.name,
+      "image": new URL(image, Astro.url).href,
+      "url": businessInfo.url,
+      "telephone": businessInfo.phone,
+      "email": businessInfo.email,
+      "priceRange": businessInfo.priceRange,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": businessInfo.address.streetAddress,
+        "addressLocality": businessInfo.address.addressLocality,
+        "addressRegion": businessInfo.address.addressRegion,
+        "postalCode": businessInfo.address.postalCode,
+        "addressCountry": businessInfo.address.addressCountry
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "20.6597",
+        "longitude": "-103.3496"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "14:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/dra.samaragomez",
+        "https://facebook.com/ortodens"
+      ],
+      "areaServed": {
+        "@type": "City",
+        "name": "Guadalajara"
+      },
+      "medicalSpecialty": "Orthodontics",
+      "availableService": [
+        {
+          "@type": "MedicalProcedure",
+          "name": "Ortodoncia con Bracket Metálico"
+        },
+        {
+          "@type": "MedicalProcedure",
+          "name": "Brackets Estéticos"
+        },
+        {
+          "@type": "MedicalProcedure",
+          "name": "Alineadores Transparentes"
+        },
+        {
+          "@type": "MedicalProcedure",
+          "name": "Brackets Autoligado"
+        }
+      ]
+    })} />
     
     <script is:inline>
       const theme = (() => {

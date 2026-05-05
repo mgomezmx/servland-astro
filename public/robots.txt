@@ -1,5 +1,22 @@
 # https://www.robotstxt.org/robotstxt.html
+# Robots.txt for Ortodens - Ortodoncia Guadalajara
 User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_astro/
+
+# Sitemap location
+Sitemap: https://ortodens.com/sitemap.xml
+
+# Crawl-delay for better server performance
+Crawl-delay: 1
+
+# Allow Google Image Bot
+User-agent: Googlebot-Image
+Allow: /
+
+# Allow Google Ads Bot
+User-agent: AdsBot-Google
 Allow: /
 
 # Sitemap
