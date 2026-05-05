@@ -1,0 +1,8 @@
+# Cloudflare Pages Redirects Configuration
+# https://developers.cloudflare.com/pages/platform/redirects/
+
+# Redirect old URLs if needed (examples)
+# /old-path /new-path 301
+
+# SPA fallback (if needed for client-side routing)
+# /* /index.html 200

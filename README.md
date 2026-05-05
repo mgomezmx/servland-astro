@@ -101,6 +101,45 @@ npm run preview
 
 The built files will be in the `dist/` directory.
 
+## ☁️ Cloudflare Pages Deployment
+
+This site is optimized for Cloudflare Pages deployment. See [CLOUDFLARE_DEPLOYMENT.md](CLOUDFLARE_DEPLOYMENT.md) for detailed instructions.
+
+**Quick Deploy:**
+1. Connect your repository to Cloudflare Pages
+2. Use build command: `npm run build`
+3. Set build output directory: `dist`
+4. Deploy!
+
+## 🚀 Recent Improvements
+
+### Performance Optimizations
+- ✅ Cloudflare Pages adapter configured for hybrid rendering
+- ✅ Optimized font loading (non-blocking)
+- ✅ Lazy loading for calendar iframe
+- ✅ Improved parallax background with `requestAnimationFrame`
+- ✅ Added `prefers-reduced-motion` support
+- ✅ CSS minification with Lightning CSS
+
+### WhatsApp Integration
+- ✅ Fixed WhatsApp link with pre-filled message
+- ✅ Added floating WhatsApp button for mobile
+- ✅ Proper URL encoding for Spanish characters
+
+### Background Improvements
+- ✅ Increased opacity from 0.15 to 0.35 for better visibility
+- ✅ Removed excessive blur effect
+- ✅ Added professional gradient overlays
+- ✅ Optimized animations for performance
+
+### Mobile Enhancements
+- ✅ Responsive calendar iframe
+- ✅ Floating WhatsApp button with pulse animation
+- ✅ Touch-optimized UI elements
+- ✅ Improved mobile performance
+
+See [IMAGE_OPTIMIZATION_GUIDE.md](IMAGE_OPTIMIZATION_GUIDE.md) for image optimization recommendations.
+
 ## 🤝 Contributing
 
 Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md).

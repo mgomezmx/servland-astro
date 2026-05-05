@@ -11,6 +11,7 @@ import Layout from '../layouts/Layout.astro';
 import ParallaxBackground from '../components/ParallaxBackground.astro';
 import ScrollToTop from '../components/ScrollToTop.astro';
 import ThemeToggle from '../components/ThemeToggle.astro';
+import FloatingWhatsApp from '../components/FloatingWhatsApp.astro';
 ---
 
 <Layout 
@@ -18,8 +19,9 @@ import ThemeToggle from '../components/ThemeToggle.astro';
   description="Clínica especializada en tratamientos de odontología y ortodoncia en Guadalajara."
   image="/preview.png"
 >
-    <ParallaxBackground />
-  <ScrollToTop />
+    <ParallaxBackground />
+  <ScrollToTop />
+  <FloatingWhatsApp />
   
     <header slot="header" class="sticky top-0 z-50 bg-gradient-to-r from-blue-500 to-purple-600 dark:from-blue-600 dark:to-purple-800 font-poppins w-full">
         <div class="absolute inset-0 bg-black/5 dark:bg-black/20 backdrop-blur-md"></div>
@@ -122,12 +124,12 @@ import ThemeToggle from '../components/ThemeToggle.astro';
             <p class="text-gray-600 dark:text-gray-400 mb-6">
               Te responderemos a la brevedad. 
             </p>
-            <a 
-              href="https://wa.me/523333804784" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              class="block w-full bg-green-500 hover:bg-green-600 text-white py-3 px-4 rounded-md transition-colors font-medium text-center flex items-center justify-center"
-            >
+<a
+  href="https://wa.me/523333804784?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20en%20Ortodens"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="block w-full bg-green-500 hover:bg-green-600 text-white py-3 px-4 rounded-md transition-colors font-medium text-center flex items-center justify-center"
+>
               <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
               </svg>
@@ -135,16 +137,35 @@ import ThemeToggle from '../components/ThemeToggle.astro';
             </a>
           </div>
 
-                    <div class="pt-6 border-t border-gray-200 dark:border-gray-700">
-            <h3 class="text-2xl font-semibold mb-6 dark:text-white flex items-center font-poppins">
-              <svg class="w-8 h-8 mr-3 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-              Agenda tu Cita
-            </h3>
-            <p class="text-gray-600 dark:text-gray-400 mb-6">
-              Selecciona una fecha y hora para tu consulta.
-            </p>
-            <iframe width='100%' height='750px' src='https://ortodens.zohobookings.com/portal-embed#/ortodens' frameborder='0' allowfullscreen=''> </iframe>
-          </div>
+<div class="pt-6 border-t border-gray-200 dark:border-gray-700">
+<h3 class="text-2xl font-semibold mb-6 dark:text-white flex items-center font-poppins">
+<svg class="w-8 h-8 mr-3 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+Agenda tu Cita
+</h3>
+<p class="text-gray-600 dark:text-gray-400 mb-6">
+Selecciona una fecha y hora para tu consulta.
+</p>
+<div class="relative w-full" style="padding-bottom: min(750px, 150%);">
+<iframe
+id="calendar-iframe"
+class="absolute top-0 left-0 w-full h-full rounded-lg shadow-inner"
+data-src='https://ortodens.zohobookings.com/portal-embed#/ortodens'
+frameborder='0'
+allowfullscreen
+loading="lazy"
+title="Calendario de citas Ortodens"
+></iframe>
+<div id="calendar-loader" class="absolute inset-0 flex items-center justify-center bg-gray-100 dark:bg-gray-800 rounded-lg">
+<div class="text-center">
+<svg class="animate-spin h-10 w-10 text-blue-500 mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+<path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+</svg>
+<p class="text-gray-600 dark:text-gray-400">Cargando calendario...</p>
+</div>
+</div>
+</div>
+</div>
         </div>
       </div>
     </div>
@@ -221,3 +242,51 @@ import ThemeToggle from '../components/ThemeToggle.astro';
     </div>
   </footer>
 </Layout>
+
+
+<script>
+  // Lazy load calendar iframe with Intersection Observer
+  document.addEventListener('DOMContentLoaded', () => {
+    const iframe = document.getElementById('calendar-iframe') as HTMLIFrameElement;
+    const loader = document.getElementById('calendar-loader');
+    
+    if (!iframe || !loader) return;
+
+    const loadIframe = () => {
+      const src = iframe.getAttribute('data-src');
+      if (src) {
+        iframe.src = src;
+        iframe.removeAttribute('data-src');
+        
+        // Hide loader after iframe loads
+        iframe.addEventListener('load', () => {
+          loader.style.display = 'none';
+        });
+
+        // Fallback: hide loader after 3 seconds
+        setTimeout(() => {
+          loader.style.display = 'none';
+        }, 3000);
+      }
+    };
+
+    // Use Intersection Observer for lazy loading
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            loadIframe();
+            observer.disconnect();
+          }
+        });
+      }, {
+        rootMargin: '50px'
+      });
+
+      observer.observe(iframe);
+    } else {
+      // Fallback for browsers without Intersection Observer
+      loadIframe();
+    }
+  });
+</script>
