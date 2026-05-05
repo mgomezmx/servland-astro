@@ -1,86 +1,88 @@
 ---
 ---
 <div class="fixed inset-0 -z-10 overflow-hidden">
-  <!-- Professional gradient background -->
-  <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"></div>
+  <!-- Professional multi-layer gradient background -->
+  <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-blue-100 dark:from-gray-900 dark:via-blue-950 dark:to-purple-950"></div>
   
-  <!-- Cityscape background with improved visibility -->
-  <div class="absolute inset-0 cityscape-background" role="presentation"></div>
+  <!-- Animated gradient overlay for depth and movement -->
+  <div class="absolute inset-0 gradient-animation"></div>
   
-  <!-- Subtle overlay for depth -->
-  <div class="absolute inset-0 bg-gradient-to-b from-transparent via-white/30 to-white/50 dark:via-gray-900/30 dark:to-gray-900/50"></div>
+  <!-- Subtle geometric pattern overlay -->
+  <div class="absolute inset-0 geometric-pattern opacity-[0.04] dark:opacity-[0.06]"></div>
   
-  <!-- Refined grid pattern -->
-  <div class="absolute inset-0 bg-grid-pattern opacity-[0.03] dark:opacity-[0.08]"></div>
+  <!-- Soft vignette effect -->
+  <div class="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-white/20 dark:to-black/20"></div>
 </div>
 
 <style>
-  .cityscape-background {
-    background-image: url('/sl-sky.webp');
-    background-position: bottom center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    transform-origin: bottom;
-    opacity: 0.35;
-    will-change: transform;
+  /* Animated gradient for subtle movement */
+  .gradient-animation {
+    background: linear-gradient(
+      135deg,
+      rgba(99, 102, 241, 0.1) 0%,
+      rgba(168, 85, 247, 0.1) 25%,
+      rgba(59, 130, 246, 0.1) 50%,
+      rgba(147, 51, 234, 0.1) 75%,
+      rgba(99, 102, 241, 0.1) 100%
+    );
+    background-size: 400% 400%;
   }
 
   /* Respect user's motion preferences */
   @media (prefers-reduced-motion: no-preference) {
-    .cityscape-background {
-      animation: subtle-parallax 30s ease-in-out infinite;
+    .gradient-animation {
+      animation: gradient-shift 20s ease infinite;
     }
   }
 
-  @keyframes subtle-parallax {
+  @keyframes gradient-shift {
     0%, 100% {
-      transform: translateY(0) scale(1.02);
+      background-position: 0% 50%;
     }
     50% {
-      transform: translateY(-10px) scale(1);
+      background-position: 100% 50%;
     }
   }
 
-  .bg-grid-pattern {
+  /* Modern geometric pattern */
+  .geometric-pattern {
     background-image:
-      linear-gradient(to right, rgba(59, 130, 246, 0.1) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
-    background-size: 60px 60px;
+      linear-gradient(30deg, rgba(99, 102, 241, 0.15) 12%, transparent 12.5%, transparent 87%, rgba(99, 102, 241, 0.15) 87.5%, rgba(99, 102, 241, 0.15)),
+      linear-gradient(150deg, rgba(99, 102, 241, 0.15) 12%, transparent 12.5%, transparent 87%, rgba(99, 102, 241, 0.15) 87.5%, rgba(99, 102, 241, 0.15)),
+      linear-gradient(30deg, rgba(99, 102, 241, 0.15) 12%, transparent 12.5%, transparent 87%, rgba(99, 102, 241, 0.15) 87.5%, rgba(99, 102, 241, 0.15)),
+      linear-gradient(150deg, rgba(99, 102, 241, 0.15) 12%, transparent 12.5%, transparent 87%, rgba(99, 102, 241, 0.15) 87.5%, rgba(99, 102, 241, 0.15)),
+      linear-gradient(60deg, rgba(168, 85, 247, 0.1) 25%, transparent 25.5%, transparent 75%, rgba(168, 85, 247, 0.1) 75%, rgba(168, 85, 247, 0.1)),
+      linear-gradient(60deg, rgba(168, 85, 247, 0.1) 25%, transparent 25.5%, transparent 75%, rgba(168, 85, 247, 0.1) 75%, rgba(168, 85, 247, 0.1));
+    background-size: 80px 140px;
+    background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
   }
 
-  /* Dark mode grid adjustment */
-  .dark .bg-grid-pattern {
+  /* Radial gradient utility */
+  .bg-gradient-radial {
+    background: radial-gradient(circle at center, var(--tw-gradient-stops));
+  }
+
+  /* Dark mode adjustments */
+  .dark .geometric-pattern {
     background-image:
-      linear-gradient(to right, rgba(147, 197, 253, 0.1) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(147, 197, 253, 0.1) 1px, transparent 1px);
+      linear-gradient(30deg, rgba(147, 197, 253, 0.1) 12%, transparent 12.5%, transparent 87%, rgba(147, 197, 253, 0.1) 87.5%, rgba(147, 197, 253, 0.1)),
+      linear-gradient(150deg, rgba(147, 197, 253, 0.1) 12%, transparent 12.5%, transparent 87%, rgba(147, 197, 253, 0.1) 87.5%, rgba(147, 197, 253, 0.1)),
+      linear-gradient(30deg, rgba(147, 197, 253, 0.1) 12%, transparent 12.5%, transparent 87%, rgba(147, 197, 253, 0.1) 87.5%, rgba(147, 197, 253, 0.1)),
+      linear-gradient(150deg, rgba(147, 197, 253, 0.1) 12%, transparent 12.5%, transparent 87%, rgba(147, 197, 253, 0.1) 87.5%, rgba(147, 197, 253, 0.1)),
+      linear-gradient(60deg, rgba(196, 181, 253, 0.08) 25%, transparent 25.5%, transparent 75%, rgba(196, 181, 253, 0.08) 75%, rgba(196, 181, 253, 0.08)),
+      linear-gradient(60deg, rgba(196, 181, 253, 0.08) 25%, transparent 25.5%, transparent 75%, rgba(196, 181, 253, 0.08) 75%, rgba(196, 181, 253, 0.08));
+  }
+
+  /* Performance optimization */
+  .gradient-animation,
+  .geometric-pattern {
+    will-change: background-position;
+  }
+
+  /* Disable animations for reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .gradient-animation {
+      animation: none;
+    }
   }
 </style>
-
-<script>
-  // Optimized parallax effect with requestAnimationFrame
-  let ticking = false;
-  let lastScrollY = 0;
-
-  function updateParallax() {
-    const cityscape = document.querySelector('.cityscape-background') as HTMLElement;
-    if (cityscape && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
-      const scrolled = lastScrollY;
-      const rate = scrolled * 0.1;
-      cityscape.style.transform = `translateY(${rate}px) scale(${1 + scrolled * 0.00005})`;
-    }
-    ticking = false;
-  }
-
-  function onScroll() {
-    lastScrollY = window.pageYOffset;
-    if (!ticking) {
-      window.requestAnimationFrame(updateParallax);
-      ticking = true;
-    }
-  }
-
-  // Only add scroll listener if user hasn't requested reduced motion
-  if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
-    window.addEventListener('scroll', onScroll, { passive: true });
-  }
-</script>
