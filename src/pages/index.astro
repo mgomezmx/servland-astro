@@ -27,13 +27,11 @@ import FloatingWhatsApp from '../components/FloatingWhatsApp.astro';
     <header slot="header" class="sticky top-0 z-50 bg-gradient-to-r from-blue-500 to-purple-600 dark:from-blue-600 dark:to-purple-800 font-poppins w-full">
         <div class="absolute inset-0 bg-black/5 dark:bg-black/20 backdrop-blur-md"></div>
         <nav class="container mx-auto px-4 py-4 relative z-10">
-      <div class="flex justify-between items-center">
-                <a href="/" class="flex items-center space-x-2">
-          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center shadow-lg">
-            <span class="text-white font-bold">SL</span>
-          </div>
-          <span class="text-lg font-semibold text-white">Servland</span>
-        </a>
+<div class="flex justify-between items-center">
+          <a href="/" class="flex items-center space-x-3">
+    <img src="/ortodens_icon.png" alt="Ortodens Icon" class="w-10 h-10 object-contain" />
+    <img src="/ortodens_logo.png" alt="Ortodens" class="h-8 object-contain hidden sm:block" />
+  </a>
         
                 <ThemeToggle />
         
@@ -181,14 +179,12 @@ title="Calendario de citas Ortodens"
     <div class="container mx-auto px-4 relative z-10">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
-          <div class="flex items-center space-x-2 mb-4">
-            <a href="/" class="flex items-center space-x-2">
-              <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center shadow-lg">
-                <span class="text-white font-bold">SL</span>
-              </div>
-              <span class="text-white font-semibold text-lg">Servland</span>
-            </a>
-          </div>
+<div class="flex items-center space-x-3 mb-4">
+  <a href="/" class="flex items-center space-x-3">
+    <img src="/ortodens_icon.png" alt="Ortodens Icon" class="w-10 h-10 object-contain" />
+    <img src="/ortodens_logo.png" alt="Ortodens" class="h-8 object-contain" />
+  </a>
+</div>
           <div class="font-medium text-gray-100">Dirección 1</div>
           <div class="font-medium text-gray-100">Dirección 2</div>
           <div class="font-medium text-gray-100">Código Postal</div>
